@@ -40,7 +40,7 @@ const FlightSearchForm = () => {
 
     return (
         <div className="form-card">
-            <h2>Search Flights</h2>
+            <h2>Search for Flights</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Trip Type:</label>
@@ -58,28 +58,28 @@ const FlightSearchForm = () => {
                     </div>
                 </div>
                 <div>
-                    <label>Starting Location:</label>
+                    <label htmlFor="startingLocation">Starting Location:</label>
                     <input
-                        type="text"
+                        id="startingLocation"
                         name="startingLocation"
-                        value={formData.startingLocation}
-                        onChange={handleChange}
-                        required
+                        value={formData.startingLocation}  // Use formData
+                        onChange={handleChange}  // Use existing handler
                     />
                 </div>
+
                 <div>
-                    <label>Ending Location:</label>
+                    <label htmlFor="endingLocation">Ending Location:</label>
                     <input
-                        type="text"
+                        id="endingLocation"
                         name="endingLocation"
-                        value={formData.endingLocation}
-                        onChange={handleChange}
-                        required
+                        value={formData.endingLocation}  // Use formData
+                        onChange={handleChange}  // Use existing handler
                     />
                 </div>
                 <div>
-                    <label>Date of Travel:</label>
+                    <label htmlFor="travelDate">Date of Travel:</label>
                     <input
+                        id="travelDate"
                         type="date"
                         name="travelDate"
                         value={formData.travelDate}
@@ -89,8 +89,9 @@ const FlightSearchForm = () => {
                 </div>
                 {formData.tripType === 'round-trip' && (
                     <div>
-                        <label>Return Date:</label>
+                        <label htmlFor="returnDate">Return Date:</label>
                         <input
+                            id="returnDate"
                             type="date"
                             name="returnDate"
                             value={formData.returnDate}
@@ -100,8 +101,9 @@ const FlightSearchForm = () => {
                     </div>
                 )}
                 <div>
-                    <label>Number of Travelers:</label>
+                    <label htmlFor="numberOfTravelers">Number of Travelers:</label>
                     <input
+                        id="numberOfTravelers"
                         type="number"
                         name="numberOfTravelers"
                         value={formData.numberOfTravelers}
@@ -121,8 +123,8 @@ const FlightSearchForm = () => {
                     <ul>
                         {flightResults.map((flight, index) => (
                             <li key={index}>
-                                <strong>{flight.airline}</strong> - {flight.flightNumber}<br />
-                                {flight.departure} to {flight.arrival}<br />
+                                <strong>{flight.airline}</strong> - {flight.flightNumber}<br/>
+                                {flight.departure} to {flight.arrival}<br/>
                                 Departure: {flight.departureTime}<br />
                                 Arrival: {flight.arrivalTime}
                             </li>

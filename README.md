@@ -17,7 +17,7 @@ Ensure the following are installed on your system:
 ## Installation
 
 ### 1. Clone the Repository
-git clone <repository-url>
+git clone https://github.com/darinjbrown/634-final.git
 cd project-root
 
 ### 2. Backend Setup
@@ -32,8 +32,22 @@ mvn spring-boot:run
 
 
 ### 3. Frontend Setup
-Navigate to the frontend directory: cd frontend
+
+#### Navigate to the frontend directory: cd frontend
 #### npm start
+
+## Running Tests
+
+### Frontend Tests
+#### Navigate to the frontend directory:
+cd frontend
+npm test
+
+### Backend Tests
+#### Navigate to the backend directory:
+#### If using Maven Wrapper:
+#### cd backend
+#### ./mvnw test
 
 ### Communication Between Frontend and Backend
 The React frontend communicates with the Spring Boot backend via HTTP requests. Ensure the backend is running before starting the frontend.
