@@ -47,7 +47,10 @@ npm test
 #### Navigate to the backend directory:
 #### If using Maven Wrapper:
 #### cd backend
-#### ./mvnw test
+#### .\mvnw clean test
+#### If Maven installed globally:
+#### mvnw clean test
+#### Backend test results will be displayed in the console and in the target/site/jacoco/index.html file.
 
 ### Communication Between Frontend and Backend
 The React frontend communicates with the Spring Boot backend via HTTP requests. Ensure the backend is running before starting the frontend.
