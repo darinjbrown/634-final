@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9522e687-395c-4622-afe7-e33e3d3b7f84" name="Changes" comment="Configured for AviationStack api then Amadeus api.  refactored to use DTO's  and service interface/impl models.">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/__final_backend/backend/service/FlightServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+    <list default="true" id="9522e687-395c-4622-afe7-e33e3d3b7f84" name="Changes" comment="Started unit tests">
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/FlightSearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/FlightSearchForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +124,7 @@
       <workItem from="1745177404445" duration="820000" />
       <workItem from="1745233770980" duration="4040000" />
       <workItem from="1745238797509" duration="6086000" />
-      <workItem from="1745245380496" duration="10076000" />
+      <workItem from="1745245380496" duration="10466000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -160,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745252576265</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Started unit tests">
+      <option name="closed" value="true" />
+      <created>1745257301375</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745257301375</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +177,8 @@
     <MESSAGE value="added unit tests and updated configs to use Jest and Junit" />
     <MESSAGE value="updated unit test config" />
     <MESSAGE value="Configured for AviationStack api then Amadeus api.  refactored to use DTO's  and service interface/impl models." />
-    <option name="LAST_COMMIT_MESSAGE" value="Configured for AviationStack api then Amadeus api.  refactored to use DTO's  and service interface/impl models." />
+    <MESSAGE value="Started unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started unit tests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -126,7 +126,8 @@ const FlightSearchForm = () => {
                                 <strong>{flight.airline}</strong> - {flight.flightNumber}<br/>
                                 {flight.departure} to {flight.arrival}<br/>
                                 Departure: {flight.departureTime}<br />
-                                Arrival: {flight.arrivalTime}
+                                Arrival: {flight.arrivalTime}<br/>
+                                Price: ${flight.price}<br/>
                             </li>
                         ))}
                     </ul>
