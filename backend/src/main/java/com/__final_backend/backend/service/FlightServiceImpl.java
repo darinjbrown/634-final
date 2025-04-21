@@ -23,23 +23,55 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Implementation of the FlightService interface that uses the Amadeus API
+ * to search for flight offers and convert them into application-specific DTOs.
+ * <p>
+ * This service handles communication with the Amadeus flight search API,
+ * processes the responses, and maps the data to our internal flight data model.
+ */
 @Service
 public class FlightServiceImpl implements FlightService {
 
+    /** Logger for this class */
     private static final Logger logger = LoggerFactory.getLogger(FlightServiceImpl.class);
 
+    /** Amadeus API key from application properties */
     @Value("${amadeus.api.key}")
     private String apiKey;
 
+    /** Amadeus API secret from application properties */
     @Value("${amadeus.api.secret}")
     private String apiSecret;
 
+    /** Cache to store airline codes and their corresponding names */
     private Map<String, String> airlineCache = new HashMap<>();
 
+    /**
+     * Creates and returns an Amadeus API client with configured credentials.
+     *
+     * @return An initialized Amadeus client
+     */
     private Amadeus getAmadeusClient() {
         return Amadeus.builder(apiKey, apiSecret).build();
     }
 
+    /**
+     * Searches for flights based on the provided parameters using the Amadeus API.
+     * <p>
+     * This method validates input parameters, builds the API request, executes it,
+     * and processes the response into a list of FlightDTO objects.
+     *
+     * @param startingLocation The origin airport code
+     * @param endingLocation The destination airport code
+     * @param travelDate The departure date
+     * @param returnDate The return date (for round-trip flights)
+     * @param numberOfTravelers The number of adult passengers
+     * @param tripType The type of trip ("one-way" or "round-trip")
+     * @return A list of FlightDTO objects matching the search criteria
+     * @throws IllegalArgumentException If required parameters are missing
+     * @throws RuntimeException If there is an API error or unexpected exception
+     */
     @Override
     public List<FlightDTO> searchFlights(
             String startingLocation,
@@ -100,6 +132,18 @@ public class FlightServiceImpl implements FlightService {
         }
     }
 
+    /**
+     * Maps Amadeus FlightOfferSearch objects to application-specific FlightDTO objects.
+     * <p>
+     * This method:
+     * 1. Extracts airline codes from flight offers
+     * 2. Loads airline names for these codes
+     * 3. Maps flight segment data to FlightDTO objects
+     *
+     * @param flightOffers Array of flight offers from Amadeus API
+     * @param amadeus The Amadeus client to fetch additional data
+     * @return List of FlightDTO objects with mapped flight information
+     */
     private List<FlightDTO> mapToFlightDTOs(FlightOfferSearch[] flightOffers, Amadeus amadeus) {
         List<FlightDTO> flightDTOs = new ArrayList<>();
         Set<String> airlineCodes = new HashSet<>();
@@ -147,6 +191,15 @@ public class FlightServiceImpl implements FlightService {
         return flightDTOs;
     }
 
+    /**
+     * Loads airline names for a set of airline codes using Amadeus API.
+     * <p>
+     * This method queries the Amadeus API for each airline code and stores
+     * the results in the airline cache for future use.
+     *
+     * @param airlineCodes Set of airline codes to lookup
+     * @param amadeus The Amadeus client to use for lookups
+     */
     private void loadAirlineNames(Set<String> airlineCodes, Amadeus amadeus) {
         for (String code : airlineCodes) {
             if (airlineCache.containsKey(code)) {
@@ -171,6 +224,15 @@ public class FlightServiceImpl implements FlightService {
         }
     }
 
+    /**
+     * Extracts a formatted time string (HH:mm) from a datetime string.
+     * <p>
+     * This method attempts to parse the input string as a ZonedDateTime or LocalDateTime,
+     * and falls back to direct string manipulation if parsing fails.
+     *
+     * @param dateTimeString The datetime string to extract time from
+     * @return A formatted time string in "HH:mm" format
+     */
     private String extractTimeFromDateTime(String dateTimeString) {
         if (dateTimeString == null || dateTimeString.isEmpty()) {
             return "N/A";
