@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9522e687-395c-4622-afe7-e33e3d3b7f84" name="Changes" comment="updated unit test config">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/controller/FlightController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/dto/FlightDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/dto/FlightSearchRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/service/FlightService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/service/FlightServiceImpl.java" afterDir="false" />
+    <list default="true" id="9522e687-395c-4622-afe7-e33e3d3b7f84" name="Changes" comment="Configured for AviationStack api then Amadeus api.  refactored to use DTO's  and service interface/impl models.">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/__final_backend/backend/service/FlightServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/BackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/__final_backend/backend/controller/FlightSearchController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/__final_backend/backend/BackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/__final_backend/backend/BackendApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/__final_backend/backend/contoller/FlightControllerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +126,7 @@
       <workItem from="1745177404445" duration="820000" />
       <workItem from="1745233770980" duration="4040000" />
       <workItem from="1745238797509" duration="6086000" />
-      <workItem from="1745245380496" duration="5123000" />
+      <workItem from="1745245380496" duration="10076000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -167,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744480122366</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Configured for AviationStack api then Amadeus api.  refactored to use DTO's  and service interface/impl models.">
+      <option name="closed" value="true" />
+      <created>1745252576265</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745252576265</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +170,8 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="added unit tests and updated configs to use Jest and Junit" />
     <MESSAGE value="updated unit test config" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated unit test config" />
+    <MESSAGE value="Configured for AviationStack api then Amadeus api.  refactored to use DTO's  and service interface/impl models." />
+    <option name="LAST_COMMIT_MESSAGE" value="Configured for AviationStack api then Amadeus api.  refactored to use DTO's  and service interface/impl models." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
