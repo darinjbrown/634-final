@@ -1,4 +1,4 @@
-package com.final_backend.backend.config;
+package com.__final_backend.backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**") // Allow CORS for API endpoints
-                        .allowedOrigins("http://localhost:3000") // Allow requests from the frontend
+                        .allowedOrigins("http://localhost:3000", "http://localhost:3001") // Allow requests from the frontend
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow specific HTTP methods
                         .allowedHeaders("*") // Allow all headers
                         .allowCredentials(true); // Allow cookies if needed
